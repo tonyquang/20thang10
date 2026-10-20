@@ -187,6 +187,50 @@ h2.title{text-align:center;font-size:clamp(23px,6.2vw,38px);color:var(--pink-dar
 .letter p{margin:0 0 12px}
 .letter .sign{text-align:right;font-family:'Baloo 2',cursive;font-size:18px;color:var(--lav);margin:18px 0 0}
 
+
+/* ---------- chibi tặng hoa ---------- */
+.scene{max-width:520px;margin:4px auto 0}
+.scene svg.art{width:100%;height:auto;display:block;overflow:hidden}
+.scene g, .scene use{transform-box:fill-box}
+.replay{display:block;margin:4px auto 0;border:2px solid var(--pink-soft);background:#fff;
+  color:var(--pink-dark);font-family:'Baloo 2',cursive;font-weight:700;font-size:15px;
+  border-radius:999px;padding:9px 20px;min-height:44px;cursor:pointer;box-shadow:0 6px 14px rgba(242,85,143,.16)}
+.replay:active{transform:scale(.96)}
+
+.boy{transform:translateX(-250px)}
+.play .boy{animation:runIn 1.9s cubic-bezier(.25,.5,.35,1) forwards}
+@keyframes runIn{to{transform:translateX(0)}}
+
+.play .boyBob{animation:bobRun .3s ease-in-out 6}
+@keyframes bobRun{50%{transform:translateY(-7px)}}
+
+.legL{transform-origin:50% 8%} .legR{transform-origin:50% 8%}
+.play .legL{animation:swing .3s ease-in-out 6}
+.play .legR{animation:swing .3s ease-in-out 6 reverse}
+@keyframes swing{0%,100%{transform:rotate(22deg)}50%{transform:rotate(-22deg)}}
+
+.armGive{transform-origin:50% 10%}
+.play .armGive{animation:swing .3s ease-in-out 6, give .5s ease-out 1.85s forwards}
+@keyframes give{to{transform:rotate(-48deg)}}
+
+.play .bouquet{animation:handover .55s cubic-bezier(.3,.8,.4,1.2) 2s forwards}
+@keyframes handover{to{transform:translate(31.5px,-12px) rotate(12deg)}}
+
+.armTake{transform-origin:50% 10%}
+.play .armTake{animation:take .5s ease-out 2.05s forwards}
+@keyframes take{to{transform:rotate(42deg)}}
+
+.play .girl{animation:hop .6s ease-in-out 2.5s infinite}
+@keyframes hop{30%{transform:translateY(-9px)}60%{transform:translateY(0)}}
+
+.hearts use{opacity:0;transform-origin:50% 100%}
+.play .hearts use{animation:floatUp 2.8s ease-out infinite}
+@keyframes floatUp{
+  0%{opacity:0;transform:translateY(6px) scale(.5)}
+  18%{opacity:1}
+  70%{opacity:.9}
+  100%{opacity:0;transform:translateY(-92px) scale(1.15)}
+}
 footer{text-align:center;padding:40px var(--pad) calc(90px + env(safe-area-inset-bottom));
        font-weight:600;opacity:.65;font-size:14px}
 .conf{position:fixed;width:8px;height:13px;border-radius:2px;pointer-events:none;z-index:60}
@@ -300,6 +344,86 @@ footer{text-align:center;padding:40px var(--pad) calc(90px + env(safe-area-inset
         <button id="prev" aria-label="Ảnh trước">‹</button>
         <button id="next" aria-label="Ảnh sau">›</button>
       </div>
+    </div>
+
+
+    <div class="scene hide" id="scene">
+      <h2 class="title">Anh có bó hoa cho em</h2>
+      <svg class="art" viewBox="0 0 400 250" role="img" aria-label="Chibi anh chạy tới tặng vợ bó hoa">
+        <defs>
+          <clipPath id="clipBoy"><circle cx="168" cy="100" r="29"/></clipPath>
+          <clipPath id="clipGirl"><circle cx="272" cy="98" r="29"/></clipPath>
+        </defs>
+        <ellipse cx="200" cy="232" rx="170" ry="10" fill="#ffd6e8" opacity=".5"/>
+
+        <!-- VỢ -->
+        <g class="girl">
+          <ellipse cx="272" cy="228" rx="34" ry="7" fill="#f2558f" opacity=".14"/>
+          <rect x="261" y="186" width="9" height="36" rx="4.5" fill="#ffd9bd"/>
+          <rect x="275" y="186" width="9" height="36" rx="4.5" fill="#ffd9bd"/>
+          <ellipse cx="265" cy="224" rx="8" ry="4" fill="#fff"/>
+          <ellipse cx="280" cy="224" rx="8" ry="4" fill="#fff"/>
+          <path d="M252 158h41l7 32h-55z" fill="#3a3a44"/>
+          <path d="M254 126h37a8 8 0 0 1 8 8v26h-53v-26a8 8 0 0 1 8-8z" fill="#fff"/>
+          <path d="M254 126h37a8 8 0 0 1 8 8v8h-53v-8a8 8 0 0 1 8-8z" fill="#3a3a44"/>
+          <g class="armTake">
+            <rect x="243" y="130" width="9" height="34" rx="4.5" fill="#ffd9bd" transform="rotate(10 247 134)"/>
+          </g>
+          <rect x="293" y="130" width="9" height="32" rx="4.5" fill="#ffd9bd" transform="rotate(-8 297 134)"/>
+          <circle cx="272" cy="98" r="30.5" fill="#fff"/>
+          <image href="assets/face-em.webp" x="243" y="69" width="58" height="58"
+                 clip-path="url(#clipGirl)" preserveAspectRatio="xMidYMid slice"/>
+        </g>
+
+        <!-- ANH -->
+        <g class="boy">
+          <g class="boyBob">
+            <g class="legL"><rect x="156" y="184" width="10" height="38" rx="5" fill="#b9c0cc"/></g>
+            <g class="legR"><rect x="170" y="184" width="10" height="38" rx="5" fill="#b9c0cc"/></g>
+            <ellipse cx="161" cy="224" rx="9" ry="4" fill="#dfe4ec"/>
+            <ellipse cx="175" cy="224" rx="9" ry="4" fill="#dfe4ec"/>
+            <path d="M152 128h32a9 9 0 0 1 9 9v51h-50v-51a9 9 0 0 1 9-9z" fill="#2b3a55"/>
+            <rect x="143" y="140" width="50" height="7" fill="#f3f6fb"/>
+            <rect x="143" y="156" width="50" height="7" fill="#f3f6fb"/>
+            <rect x="143" y="172" width="50" height="7" fill="#f3f6fb"/>
+            <rect x="140" y="131" width="9" height="34" rx="4.5" fill="#ffd9bd" transform="rotate(12 144 135)"/>
+            <circle cx="168" cy="100" r="30.5" fill="#fff"/>
+            <image href="assets/face-anh.webp" x="139" y="71" width="58" height="58"
+                   clip-path="url(#clipBoy)" preserveAspectRatio="xMidYMid slice"/>
+
+            <g class="armGive">
+              <rect x="187" y="131" width="9" height="34" rx="4.5" fill="#ffd9bd" transform="rotate(-14 191 135)"/>
+            </g>
+            <!-- BÓ HOA -->
+            <g class="bouquet">
+              <path d="M198 160l10-26" stroke="#5fae7a" stroke-width="3" stroke-linecap="round"/>
+              <path d="M200 160l2-24" stroke="#5fae7a" stroke-width="3" stroke-linecap="round"/>
+              <path d="M202 160l-6-22" stroke="#5fae7a" stroke-width="3" stroke-linecap="round"/>
+              <path d="M196 162l12-10-4 16z" fill="#ffe2b0"/>
+              <g fill="#ff6fa8">
+                <circle cx="193" cy="132" r="5.5"/><circle cx="203" cy="128" r="5.5"/>
+                <circle cx="211" cy="134" r="5.5"/><circle cx="199" cy="138" r="5.5"/>
+              </g>
+              <g fill="#ffc2dc">
+                <circle cx="198" cy="123" r="5"/><circle cx="208" cy="124" r="4.5"/>
+              </g>
+              <circle cx="199" cy="132" r="2.6" fill="#ffd56b"/>
+              <circle cx="203" cy="127" r="2.2" fill="#ffd56b"/>
+            </g>
+          </g>
+        </g>
+
+        <!-- TIM BAY LÊN -->
+        <g class="hearts">
+          <use href="#s-heart" x="212" y="118" width="20" height="20" style="animation-delay:2.6s"/>
+          <use href="#s-heart" x="236" y="104" width="14" height="14" style="animation-delay:3.0s"/>
+          <use href="#s-heart" x="196" y="96"  width="17" height="17" style="animation-delay:3.4s"/>
+          <use href="#s-heart" x="252" y="122" width="12" height="12" style="animation-delay:3.8s"/>
+          <use href="#s-heart" x="222" y="88"  width="22" height="22" style="animation-delay:4.2s"/>
+          <use href="#s-heart" x="180" y="112" width="13" height="13" style="animation-delay:4.6s"/>
+        </g>
+      </svg>
+      <button class="replay" id="replay">Xem lại</button>
     </div>
 
     <div class="letter" id="letter">
@@ -559,13 +683,26 @@ function openGift(){
     $('giftLead').classList.add('hide');
     $('giftTitle').textContent = 'Kỷ niệm của mình';
     $('album').classList.remove('hide');
+    // ảnh hiện ra thì chibi cũng chạy vào tặng hoa
+    $('scene').classList.remove('hide');
+    playScene();
   }, 1150);
-  setTimeout(() => letter.classList.add('show'), 2600);
+  setTimeout(() => letter.classList.add('show'), 3800);
 }
 $('giftStage').addEventListener('click', openGift);
 $('giftStage').addEventListener('keydown', e => {
   if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openGift(); }
 });
+
+
+/* ---------- chibi tặng hoa: chạy khi cuộn tới, bấm để xem lại ---------- */
+const scene = $('scene');
+const playScene = () => {
+  scene.classList.remove('play');
+  void scene.offsetWidth;          // ép trình duyệt chạy lại animation
+  scene.classList.add('play');
+};
+$('replay').addEventListener('click', playScene);
 
 /* ---------- chạm đâu cũng bay lên một sticker ---------- */
 addEventListener('click', e => {
