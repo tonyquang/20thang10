@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffd6e8">
+<title>Chúc mừng 20/10 — Phan Trình Uyển Nhi</title>
+<meta name="description" content="Món quà nhỏ gửi tặng Phan Trình Uyển Nhi nhân ngày Phụ nữ Việt Nam 20/10.">
+<meta property="og:title" content="Chúc mừng 20/10 — Phan Trình Uyển Nhi">
+<meta property="og:description" content="Một món quà nhỏ dành cho vợ.">
+<meta property="og:image" content="img/1.webp">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 28S3 20 3 11.5A7.5 7.5 0 0 1 16 7a7.5 7.5 0 0 1 13 4.5C29 20 16 28 16 28z' fill='%23ff6fa8'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ MOBILE FIRST ============ */
+:root{
+  --pink:#ff7eb3; --pink-dark:#f2558f; --pink-soft:#ffd6e8;
+  --lav:#c3a4ff; --cream:#fff8fc; --ink:#5a3550;
+  --shadow:0 14px 30px rgba(242,85,143,.2);
+  --pad:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0; font-family:Quicksand,system-ui,-apple-system,sans-serif; color:var(--ink);
+  font-size:16px; line-height:1.6;
+  background:
+    radial-gradient(90vw 50vh at 10% -5%, #ffe7f4 0%, transparent 65%),
+    radial-gradient(90vw 40vh at 100% 8%, #efe4ff 0%, transparent 60%),
+    radial-gradient(90vw 50vh at 50% 105%, #e2fff4 0%, transparent 65%),
+    var(--cream);
+  overflow-x:hidden;
+}
+h1,h2,h3,.name{font-family:'Baloo 2',cursive}
+img{max-width:100%}
+section{padding:54px var(--pad); position:relative; z-index:2}
+.wrap{max-width:1000px;margin:0 auto}
+.center{text-align:center}
+.st{display:inline-block;vertical-align:-.18em;width:1.1em;height:1.1em}
+.hide{display:none!important}
+h2.title{text-align:center;font-size:clamp(23px,6.2vw,38px);color:var(--pink-dark);margin:0 0 6px;line-height:1.25}
+.lead{text-align:center;opacity:.72;margin:0 0 22px;font-size:15px}
+
+/* sticker rơi nền */
+#sky{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.fall{position:absolute;top:-50px;animation:fall linear forwards;opacity:.9}
+@keyframes fall{to{transform:translateY(112vh) rotate(300deg);opacity:0}}
+
+/* hero */
+.hero{min-height:100svh;display:grid;place-items:center;perspective:1000px;padding-top:24px}
+.card-hero{
+  background:rgba(255,255,255,.75); backdrop-filter:blur(12px);
+  border:2px solid #fff; border-radius:28px; padding:32px 20px;
+  box-shadow:var(--shadow); width:100%; max-width:620px; text-align:center;
+  transform-style:preserve-3d; transition:transform .25s ease-out;
+}
+.eyebrow{
+  display:inline-block;letter-spacing:.28em;font-weight:700;font-size:12px;
+  color:#fff;background:linear-gradient(135deg,var(--pink),var(--lav));
+  padding:7px 16px;border-radius:999px;margin:0 0 14px;
+}
+.card-hero h1{margin:0;font-size:clamp(26px,7.5vw,50px);line-height:1.2;color:var(--pink-dark)}
+.name{
+  margin:12px 0 6px;font-size:clamp(26px,8.5vw,46px);font-weight:800;line-height:1.2;
+  background:linear-gradient(100deg,#ff5fa2,#c074ff 50%,#56d9bd);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:breathe 3.5s ease-in-out infinite;
+}
+@keyframes breathe{50%{transform:scale(1.04)}}
+.sub{margin:0 0 24px;font-size:15px;opacity:.75}
+.btn{
+  font-family:'Baloo 2',cursive;font-size:17px;font-weight:700;color:#fff;cursor:pointer;
+  border:0;border-radius:999px;padding:14px 26px;min-height:48px;width:100%;max-width:300px;
+  background:linear-gradient(135deg,var(--pink),var(--lav));
+  box-shadow:0 10px 22px rgba(242,85,143,.35);transition:transform .2s, box-shadow .2s;
+}
+.btn:active{transform:scale(.96)}
+.scroll-hint{margin-top:22px;font-size:30px;color:var(--pink);animation:bob2 1.8s infinite}
+@keyframes bob2{50%{transform:translateY(10px)}}
+
+/* ---------- mini game ---------- */
+.arena{
+  position:relative;height:300px;border-radius:26px;overflow:hidden;
+  background:linear-gradient(180deg,#fff,rgba(255,255,255,.4));
+  border:2px dashed var(--pink-soft);touch-action:manipulation;
+}
+.tgt{
+  position:absolute;bottom:-60px;border:0;background:none;padding:6px;cursor:pointer;
+  animation:rise linear forwards;-webkit-tap-highlight-color:transparent;line-height:0;
+}
+@keyframes rise{to{transform:translateY(-400px) rotate(var(--r,180deg))}}
+.bar{height:14px;border-radius:999px;background:#fff;border:2px solid var(--pink-soft);
+     margin:16px auto 8px;max-width:420px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:999px;transition:width .3s;
+       background:linear-gradient(90deg,var(--pink),var(--lav))}
+.score{text-align:center;font-weight:700;color:var(--pink-dark);margin:0}
+
+/* ---------- hộp quà 3D ---------- */
+/* hộp quà và vòng ảnh nằm chồng lên nhau, cùng một tâm — để ảnh bay ra từ trong hộp */
+.reveal{display:grid;place-items:center;width:100%}
+.reveal > *{grid-area:1/1;width:100%}
+.reveal .stage{pointer-events:none}
+.reveal.open .stage{pointer-events:auto}
+.gift-stage{perspective:800px;display:grid;place-items:center;height:260px;cursor:pointer;
+            transition:opacity .55s ease, transform .55s ease;-webkit-tap-highlight-color:transparent}
+.gift-stage.gone{opacity:0;transform:scale(.7);pointer-events:none}
+.box{position:relative;width:150px;height:118px;transform-style:preserve-3d;
+     transform:rotateX(-18deg) rotateY(-28deg);animation:wiggle 2.4s ease-in-out infinite}
+@keyframes wiggle{25%{transform:rotateX(-18deg) rotateY(-36deg)}75%{transform:rotateX(-18deg) rotateY(-20deg)}}
+.box.open{animation:none}
+.face{position:absolute;background:linear-gradient(160deg,#ff8fc0,#f2558f);border:2px solid #ffd6e8}
+.f-front,.f-back{width:150px;height:118px}
+.f-front{transform:translateZ(66px)} .f-back{transform:translateZ(-66px) rotateY(180deg)}
+.f-left,.f-right{width:132px;height:118px;left:9px}
+.f-left{transform:rotateY(-90deg) translateZ(75px)} .f-right{transform:rotateY(90deg) translateZ(75px)}
+.ribbon{position:absolute;inset:0;background:
+  linear-gradient(90deg,transparent 40%,#fff6 40% 60%,transparent 60%),
+  linear-gradient(0deg,transparent 42%,#fff6 42% 58%,transparent 58%)}
+.lid{position:absolute;top:-22px;left:-10px;width:170px;height:30px;transform-style:preserve-3d;
+     transition:transform 1s cubic-bezier(.4,-0.4,.3,1.4)}
+.lid .face{background:linear-gradient(160deg,#c3a4ff,#9a6cf5)}
+.lid .f-front,.lid .f-back{width:170px;height:30px}
+.lid .f-front{transform:translateZ(76px)} .lid .f-back{transform:translateZ(-76px) rotateY(180deg)}
+.lid .f-left,.lid .f-right{width:152px;height:30px;left:9px}
+.lid .f-left{transform:rotateY(-90deg) translateZ(85px)} .lid .f-right{transform:rotateY(90deg) translateZ(85px)}
+.lid .f-top{width:170px;height:152px;left:0;top:-61px;transform:rotateX(90deg) translateZ(15px);
+            background:linear-gradient(160deg,#d7c0ff,#a97bff)}
+.bow{position:absolute;top:-46px;left:50%;transform:translateX(-50%);width:46px;height:46px}
+.box.open .lid{transform:translateY(-130px) translateX(34px) rotateZ(28deg) rotateX(20deg)}
+.tap{margin-top:12px;font-weight:600;opacity:.7;font-size:15px;text-align:center}
+
+/* ---------- vòng tròn ảnh 3D ---------- */
+.stage{perspective:1000px;height:340px;display:grid;place-items:center;touch-action:pan-y;
+       user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;
+       -webkit-mask:linear-gradient(90deg,transparent,#000 11%,#000 89%,transparent);
+       mask:linear-gradient(90deg,transparent,#000 11%,#000 89%,transparent)}
+.carousel{position:relative;width:min(170px,46vw);height:min(238px,64vw);transform-style:preserve-3d}
+.photo{
+  position:absolute;inset:0;margin:0;cursor:pointer;transform:var(--pos);
+  transform-style:preserve-3d;backface-visibility:hidden;
+  transition:transform 1s cubic-bezier(.25,1.1,.35,1), opacity .45s;
+  transition-delay:calc(var(--i) * 110ms);
+}
+.carousel:not(.in) .photo{transform:translateZ(-120px) scale(.05);opacity:0}
+.photo .inner{
+  position:absolute;inset:0;border-radius:20px;overflow:hidden;border:5px solid #fff;
+  box-shadow:0 16px 34px rgba(90,53,80,.26);backface-visibility:hidden;
+  animation:bob var(--d,5s) ease-in-out infinite alternate;
+}
+@keyframes bob{to{transform:translateY(-16px)}}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.photo figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:22px 10px 9px;color:#fff;font-weight:700;font-size:14px;
+  background:linear-gradient(transparent,rgba(90,53,80,.78));text-align:center;
+}
+.nav{display:flex;gap:16px;justify-content:center;margin-top:10px}
+.nav button{
+  width:52px;height:52px;border-radius:50%;border:2px solid var(--pink-soft);background:#fff;
+  color:var(--pink-dark);font-size:22px;cursor:pointer;box-shadow:0 6px 14px rgba(242,85,143,.18);
+}
+.nav button:active{transform:scale(.92)}
+
+/* ---------- lightbox ---------- */
+.lb{position:fixed;inset:0;z-index:80;display:none;place-items:center;padding:16px;
+    background:rgba(60,30,55,.82);backdrop-filter:blur(6px)}
+.lb.on{display:grid}
+.lb figure{margin:0;max-width:min(900px,100%);max-height:88svh;display:grid;gap:10px;justify-items:center;
+           animation:zoom .3s cubic-bezier(.2,.9,.3,1.3)}
+@keyframes zoom{from{transform:scale(.8);opacity:0}}
+.lb img{max-width:100%;max-height:78svh;border-radius:18px;border:5px solid #fff;object-fit:contain;
+        box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.lb figcaption{color:#fff;font-weight:700}
+.lb-x{position:fixed;top:14px;right:14px;width:46px;height:46px;border-radius:50%;border:0;
+      background:#fff;color:var(--pink-dark);font-size:24px;cursor:pointer;line-height:1}
+
+/* ---------- thư ---------- */
+.letter{
+  max-width:560px;margin:26px auto 0;opacity:0;transform:translateY(36px) rotateX(-22deg);
+  transform-origin:top center;transition:all .9s cubic-bezier(.2,.8,.2,1);pointer-events:none;
+  background:linear-gradient(180deg,#fff,#fff5fa);border:2px solid #ffd6e8;border-radius:24px;
+  padding:26px 22px;box-shadow:var(--shadow);line-height:1.75;font-size:16px;
+}
+.letter.show{opacity:1;transform:none;pointer-events:auto}
+.letter h3{margin:0 0 10px;color:var(--pink-dark);font-size:22px;display:flex;align-items:center;gap:8px}
+.letter p{margin:0 0 12px}
+.letter .sign{text-align:right;font-family:'Baloo 2',cursive;font-size:18px;color:var(--lav);margin:18px 0 0}
+
+footer{text-align:center;padding:40px var(--pad) calc(90px + env(safe-area-inset-bottom));
+       font-weight:600;opacity:.65;font-size:14px}
+.conf{position:fixed;width:8px;height:13px;border-radius:2px;pointer-events:none;z-index:60}
+.pop{position:fixed;pointer-events:none;z-index:70;width:26px;height:26px}
+
+@media (min-width:600px){
+  :root{--pad:24px}
+  .stage{height:440px;perspective:1500px}
+  .carousel{width:200px;height:280px}
+  .arena{height:340px}
+}
+@media (min-width:900px){
+  section{padding:80px var(--pad)}
+  .card-hero{padding:48px 36px;border-radius:36px}
+  .sub{font-size:17px}
+  .btn{width:auto;font-size:19px;padding:15px 34px}
+  .btn:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 16px 32px rgba(242,85,143,.5)}
+  .letter{padding:34px 30px;font-size:17px}
+  .letter h3{font-size:26px}
+  .nav button:hover{transform:scale(1.12)}
+  .photo .inner{border-radius:24px;border-width:6px}
+  .carousel{width:215px;height:300px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body>
+
+<!-- sticker vẽ bằng SVG, không dùng emoji -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="s-heart" viewBox="0 0 32 32">
+    <path d="M16 28.5S2.5 20.2 2.5 11.8A7.6 7.6 0 0 1 16 7.1a7.6 7.6 0 0 1 13.5 4.7C29.5 20.2 16 28.5 16 28.5z" fill="#ff6fa8"/>
+    <ellipse cx="10.6" cy="12.6" rx="3.1" ry="2.1" fill="#fff" opacity=".6" transform="rotate(-25 10.6 12.6)"/>
+  </symbol>
+  <symbol id="s-flower" viewBox="0 0 32 32">
+    <g fill="#ffb3d9">
+      <circle cx="16" cy="7.2" r="5.7"/><circle cx="25.6" cy="13.8" r="5.7"/>
+      <circle cx="21.9" cy="24.8" r="5.7"/><circle cx="10.1" cy="24.8" r="5.7"/>
+      <circle cx="6.4" cy="13.8" r="5.7"/>
+    </g>
+    <circle cx="16" cy="16.6" r="4.5" fill="#ffd56b"/>
+  </symbol>
+  <symbol id="s-bow" viewBox="0 0 32 32">
+    <path d="M14.6 16 4 9.6c-1.5-.9-3.3.3-3 2L2 16l-1 4.4c-.3 1.7 1.5 2.9 3 2L14.6 16z" fill="#ff8ac0"/>
+    <path d="M17.4 16 28 9.6c1.5-.9 3.3.3 3 2L30 16l1 4.4c.3 1.7-1.5 2.9-3 2L17.4 16z" fill="#ff8ac0"/>
+    <path d="M14.6 16 4 9.6 9 16l-5 6.4L14.6 16z" fill="#f2558f" opacity=".25"/>
+    <path d="M17.4 16 28 9.6 23 16l5 6.4L17.4 16z" fill="#f2558f" opacity=".25"/>
+    <rect x="12.8" y="11.8" width="6.4" height="8.4" rx="3.2" fill="#f2558f"/>
+  </symbol>
+  <symbol id="s-spark" viewBox="0 0 32 32">
+    <path d="M16 .8c1.6 9.2 6 13.6 15.2 15.2C22 17.6 17.6 22 16 31.2 14.4 22 10 17.6.8 16 10 14.4 14.4 10 16 .8z" fill="#ffd56b"/>
+  </symbol>
+  <symbol id="s-leaf" viewBox="0 0 32 32">
+    <path d="M26 5C13 5 5 12 5 22c0 2 .5 4 1.5 5.5C8 23 12 19 18 17c-4.5 3.2-7.5 7-9 11.5C19 29.5 27 22 26 5z" fill="#9fe7d3"/>
+  </symbol>
+  <symbol id="s-letter" viewBox="0 0 32 32">
+    <rect x="2.5" y="6.5" width="27" height="19" rx="3.5" fill="#fff" stroke="#ff8ac0" stroke-width="2.4"/>
+    <path d="M3.5 8.5 16 17.5 28.5 8.5" fill="none" stroke="#ff8ac0" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M16 23.5c-3.4-2.2-5-3.8-5-5.6a2.6 2.6 0 0 1 5-1 2.6 2.6 0 0 1 5 1c0 1.8-1.6 3.4-5 5.6z" fill="#ff6fa8"/>
+  </symbol>
+</svg>
+
+<div id="sky"></div>
+
+<section class="hero">
+  <div class="card-hero" id="tilt">
+    <p class="eyebrow">20 · 10</p>
+    <h1>Chúc mừng ngày<br>Phụ nữ Việt Nam</h1>
+    <p class="name">Phan Trình Uyển Nhi</p>
+    <p class="sub">Tặng vợ của anh.</p>
+    <button class="btn" onclick="document.getElementById('game').scrollIntoView()">Chơi một ván đi em</button>
+    <div class="scroll-hint"><svg class="st"><use href="#s-bow"/></svg></div>
+  </div>
+</section>
+
+<section id="game">
+  <div class="wrap">
+    <h2 class="title">Bắt tim lấy quà</h2>
+    <p class="lead">Chạm vào <b id="goal">5</b> trái tim là có quà liền</p>
+    <div class="arena" id="arena"></div>
+    <div class="bar"><i id="barFill"></i></div>
+    <p class="score" id="score">0 / 5</p>
+  </div>
+</section>
+
+<section id="gift" class="hide">
+  <div class="wrap">
+    <h2 class="title" id="giftTitle">Quà của em nè</h2>
+    <p class="lead" id="giftLead">Chạm vào hộp quà để mở</p>
+    <div class="reveal" id="reveal">
+    <div class="gift-stage" id="giftStage" role="button" tabindex="0" aria-label="Mở hộp quà">
+      <div class="box" id="box">
+        <div class="lid">
+          <svg class="bow"><use href="#s-bow"/></svg>
+          <div class="face f-top"></div><div class="face f-front"></div><div class="face f-back"></div>
+          <div class="face f-left"></div><div class="face f-right"></div>
+        </div>
+        <div class="face f-front"><div class="ribbon"></div></div>
+        <div class="face f-back"></div>
+        <div class="face f-left"></div>
+        <div class="face f-right"></div>
+      </div>
+    </div>
+      <div class="stage" id="stage"><div class="carousel" id="car"></div></div>
+    </div>
+    <p class="tap" id="tapHint">bí mật bên trong</p>
+
+    <div id="album" class="hide">
+      <p class="lead" id="albumHint">Kéo qua lại để tìm ảnh · chạm vào ảnh để xem lớn</p>
+      <div class="nav">
+        <button id="prev" aria-label="Ảnh trước">‹</button>
+        <button id="next" aria-label="Ảnh sau">›</button>
+      </div>
+    </div>
+
+    <div class="letter" id="letter">
+      <h3><svg class="st"><use href="#s-letter"/></svg> Gửi vợ của anh</h3>
+      <p>Chúc em 20/10 thật vui, luôn khỏe mạnh và luôn được cưng chiều.</p>
+      <p>Cảm ơn em vì mọi thứ nha.</p>
+      <p class="sign">Yêu em — Chồng Quang</p>
+    </div>
+  </div>
+</section>
+
+<footer>20 · 10 · 2026</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true">
+  <button class="lb-x" id="lbx" aria-label="Đóng">×</button>
+  <figure><img id="lbimg" alt=""><figcaption id="lbcap"></figcaption></figure>
+</div>
+
+<script>
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isPhone = matchMedia('(max-width:599px)').matches;
+const STICKERS = ['s-heart','s-flower','s-bow','s-spark','s-leaf'];
+const svg = (id, px) => `<svg width="${px}" height="${px}" viewBox="0 0 32 32"><use href="#${id}"/></svg>`;
+const $ = id => document.getElementById(id);
+
+/* ---------- sticker rơi nền ---------- */
+const sky = $('sky');
+if(!reduce) setInterval(() => {
+  const d = document.createElement('div');
+  d.className = 'fall';
+  d.innerHTML = svg(STICKERS[Math.random()*STICKERS.length|0], 14 + Math.random()*20|0);
+  d.style.left = Math.random()*100 + 'vw';
+  d.style.animationDuration = (7 + Math.random()*6) + 's';
+  sky.appendChild(d);
+  setTimeout(() => d.remove(), 14000);
+}, isPhone ? 850 : 500);
+
+/* ---------- nghiêng 3D ---------- */
+const tilt = $('tilt');
+if(!reduce){
+  if(isPhone){
+    addEventListener('deviceorientation', e => {
+      const x = Math.max(-1, Math.min(1, (e.gamma || 0)/30));
+      const y = Math.max(-1, Math.min(1, ((e.beta || 45) - 45)/30));
+      tilt.style.transform = `rotateY(${x*8}deg) rotateX(${-y*8}deg)`;
+    });
+  } else {
+    addEventListener('mousemove', e => {
+      const x = e.clientX/innerWidth - .5, y = e.clientY/innerHeight - .5;
+      tilt.style.transform = `rotateY(${x*12}deg) rotateX(${-y*12}deg) translateZ(20px)`;
+    });
+  }
+}
+
+/* ---------- confetti ---------- */
+const COLORS = ['#ff7eb3','#c3a4ff','#9fe7d3','#ffd166','#ff5fa2','#fff'];
+function confetti(el){
+  const n = isPhone ? 70 : 110;
+  const r = el.getBoundingClientRect(), cx = r.left + r.width/2, cy = r.top + r.height/2;
+  for(let i = 0; i < n; i++){
+    const d = document.createElement('i');
+    d.className = 'conf';
+    d.style.background = COLORS[i % COLORS.length];
+    d.style.left = cx + 'px'; d.style.top = cy + 'px';
+    document.body.appendChild(d);
+    const a = Math.random()*Math.PI*2, dist = 90 + Math.random()*(isPhone ? 200 : 340);
+    d.animate([
+      {transform:'translate(0,0) rotate(0deg)', opacity:1},
+      {transform:`translate(${Math.cos(a)*dist}px, ${Math.sin(a)*dist + 320}px) rotate(${Math.random()*900}deg)`, opacity:0}
+    ], {duration: 1600 + Math.random()*1200, easing:'cubic-bezier(.1,.7,.3,1)'})
+     .onfinish = () => d.remove();
+  }
+}
+
+/* ---------- MINI GAME: bắt 5 trái tim (~4 giây) ---------- */
+const GOAL = 5;
+const arena = $('arena'), barFill = $('barFill'), score = $('score');
+let hits = 0, spawner, won = false;
+function spawn(){
+  const b = document.createElement('button');
+  b.className = 'tgt';
+  b.setAttribute('aria-label', 'tim');
+  b.innerHTML = svg('s-heart', 46 + Math.random()*18|0);
+  b.style.left = (6 + Math.random()*76) + '%';
+  b.style.animationDuration = (2.6 + Math.random()*1.2) + 's';
+  b.style.setProperty('--r', (Math.random()*360 - 180) + 'deg');
+  b.onclick = ev => { ev.stopPropagation(); pop(b); };
+  arena.appendChild(b);
+  setTimeout(() => b.remove(), 4200);
+}
+function pop(b){
+  if(won) return;
+  b.animate([{transform:'scale(1)',opacity:1},{transform:'scale(1.9)',opacity:0}],
+            {duration:260,easing:'ease-out'}).onfinish = () => b.remove();
+  if(navigator.vibrate) navigator.vibrate(12);
+  hits++;
+  barFill.style.width = Math.min(100, hits/GOAL*100) + '%';
+  score.textContent = Math.min(hits, GOAL) + ' / ' + GOAL;
+  if(hits >= GOAL) win();
+}
+function win(){
+  won = true;
+  clearInterval(spawner);
+  [...arena.querySelectorAll('.tgt')].forEach(t => t.remove());
+  score.textContent = 'Giỏi quá, có quà nè!';
+  confetti(arena);
+  $('gift').classList.remove('hide');
+  setTimeout(() => $('gift').scrollIntoView({behavior:'smooth', block:'start'}), 500);
+}
+// chỉ chạy game khi cuộn tới, cho vào là bắt được ngay
+new IntersectionObserver((e, o) => {
+  if(e[0].isIntersecting){
+    o.disconnect();
+    for(let i = 0; i < 3; i++) setTimeout(spawn, i*180);
+    spawner = setInterval(spawn, 420);
+  }
+}, {threshold:.35}).observe(arena);
+
+/* ---------- tìm ảnh trong folder img/ ---------- */
+const CAPTIONS = {'1':'Anh', '2':'Em', '3':'Hai đứa mình'};
+const EXT = ['webp','jpg','jpeg','png'];
+const load = src => new Promise(r => { const i = new Image(); i.onload = () => r(src); i.onerror = () => r(null); i.src = src; });
+
+// Lấy ảnh từ img/: ưu tiên img/photos.json (do ./add-photos.sh tạo),
+// đồng thời vẫn tự dò các file đặt tên theo số (1.webp, 2.jpg, ...) nếu có thêm.
+async function findPhotos(){
+  const out = [], seen = new Set();
+  const add = (file, cap) => {
+    if(seen.has(file)) return;
+    seen.add(file);
+    const num = (file.match(/^(\d+)\./) || [])[1];
+    out.push({src:'img/' + file, cap: cap || CAPTIONS[num] || ''});
+  };
+  try{
+    const res = await fetch('img/photos.json', {cache:'no-store'});
+    if(res.ok){
+      const list = await res.json();
+      if(Array.isArray(list)) list.forEach(x => typeof x === 'string' ? add(x) : add(x.src, x.caption));
+    }
+  }catch(e){}
+  let miss = 0;
+  for(let i = 1; i <= 99 && miss < 3; i++){
+    if(EXT.some(e => seen.has(`${i}.${e}`))) { miss = 0; continue; }
+    let ext = null;
+    for(const e of EXT){ if(await load(`img/${i}.${e}`)){ ext = e; break; } }
+    if(!ext){ miss++; continue; }
+    miss = 0;
+    add(`${i}.${ext}`);
+  }
+  return out;
+}
+/* ---------- vòng tròn ảnh 3D ---------- */
+const car = $('car'), stage = $('stage');
+let photos = [], ring = [], items = [];
+let rot = 0, target = null, dragging = false, moved = 0, lastX = 0, startX = 0, startY = 0, axis = null, resume;
+
+const step = () => 360 / Math.max(ring.length, 1);
+const radius = () => {
+  const w = Math.min(215, innerWidth*.46);
+  return Math.max(140, Math.min(560, Math.max(w*ring.length/(2*Math.PI)*1.3, innerWidth*.40)));
+};
+const layout = () => items.forEach((el, i) =>
+  el.style.setProperty('--pos', `rotateY(${i*step()}deg) translateZ(${radius()}px)`));
+
+findPhotos().then(list => {
+  photos = list;
+  if(!photos.length){ $('album').innerHTML = '<p class="lead">Chưa có ảnh nào trong folder img/</p>'; return; }
+  // ít ảnh thì lặp lại cho vòng tròn đầy đặn; nhiều ảnh thì giữ nguyên
+  const reps = Math.ceil(5 / photos.length);
+  ring = [];
+  for(let r = 0; r < reps; r++) photos.forEach((ph, i) => ring.push({...ph, idx:i}));
+  car.innerHTML = ring.map((p, i) => `
+    <figure class="photo" style="--i:${i}" data-i="${p.idx}" role="button" tabindex="0" aria-label="Xem ảnh lớn">
+      <div class="inner" style="--d:${(4 + i%4 + Math.random()).toFixed(1)}s">
+        <img src="${p.src}" alt="${p.cap || 'Kỷ niệm'}" loading="lazy">
+        ${p.cap ? `<figcaption>${p.cap}</figcaption>` : ''}
+      </div>
+    </figure>`).join('');
+  items = [...car.children];
+  layout();
+  items.forEach(el => {
+    el.addEventListener('click', () => { if(moved < 8) openLB(+el.dataset.i); });
+    el.addEventListener('keydown', e => { if(e.key === 'Enter') openLB(+el.dataset.i); });
+  });
+});
+addEventListener('resize', layout);
+addEventListener('orientationchange', layout);
+
+(function frame(){
+  if(target !== null){
+    rot += (target - rot) * .09;
+    if(Math.abs(target - rot) < .3) rot = target;
+  } else if(!dragging && !reduce) rot += .14;
+  car.style.transform = `rotateY(${rot}deg)`;
+  requestAnimationFrame(frame);
+})();
+function snap(dir){
+  clearTimeout(resume);
+  const s = step();
+  target = Math.round(rot/s)*s + dir*s;
+  resume = setTimeout(() => { target = null; }, 4500);
+}
+$('prev').onclick = () => snap(1);
+$('next').onclick = () => snap(-1);
+
+stage.addEventListener('pointerdown', e => {
+  dragging = true; axis = null; moved = 0; target = null; clearTimeout(resume);
+  lastX = startX = e.clientX; startY = e.clientY;
+});
+addEventListener('pointermove', e => {
+  if(!dragging) return;
+  const dx = Math.abs(e.clientX - startX), dy = Math.abs(e.clientY - startY);
+  moved = Math.max(dx, dy);
+  if(axis === null){
+    if(dx < 6 && dy < 6) return;
+    axis = dx > dy ? 'x' : 'y';
+    if(axis === 'y'){ dragging = false; snap(0); return; }  // vuốt dọc thì cứ cuộn trang
+  }
+  rot += (e.clientX - lastX) * .45; lastX = e.clientX;
+}, {passive:true});
+const endDrag = () => { if(dragging){ dragging = false; if(moved > 8) snap(0); } };
+addEventListener('pointerup', endDrag);
+addEventListener('pointercancel', endDrag);
+stage.addEventListener('wheel', e => { rot += e.deltaY*.25; target = null; clearTimeout(resume); }, {passive:true});
+
+/* ---------- lightbox ---------- */
+const lb = $('lb');
+function openLB(i){
+  const p = photos[i]; if(!p) return;
+  $('lbimg').src = p.src; $('lbimg').alt = p.cap || 'Kỷ niệm';
+  $('lbcap').textContent = p.cap || '';
+  lb.classList.add('on');
+}
+const closeLB = () => lb.classList.remove('on');
+lb.addEventListener('click', closeLB);
+$('lbx').addEventListener('click', closeLB);
+addEventListener('keydown', e => { if(e.key === 'Escape') closeLB(); });
+
+/* ---------- mở hộp quà: ảnh trào ra ---------- */
+const box = $('box'), letter = $('letter');
+function openGift(){
+  if(box.classList.contains('open')) return;
+  box.classList.add('open');
+  confetti(box);
+  if(navigator.vibrate) navigator.vibrate([25,40,25]);
+  $('tapHint').textContent = 'Tèn ten';
+  // nắp bật ra trước, rồi ảnh lần lượt bay lên từ trong hộp
+  setTimeout(() => {
+    layout();
+    $('reveal').classList.add('open');
+    requestAnimationFrame(() => car.classList.add('in'));
+  }, 620);
+  // hộp mờ dần phía sau khi ảnh đã bay ra
+  setTimeout(() => {
+    $('giftStage').classList.add('gone');
+    $('tapHint').classList.add('hide');
+    $('giftLead').classList.add('hide');
+    $('giftTitle').textContent = 'Kỷ niệm của mình';
+    $('album').classList.remove('hide');
+  }, 1150);
+  setTimeout(() => letter.classList.add('show'), 2600);
+}
+$('giftStage').addEventListener('click', openGift);
+$('giftStage').addEventListener('keydown', e => {
+  if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openGift(); }
+});
+
+/* ---------- chạm đâu cũng bay lên một sticker ---------- */
+addEventListener('click', e => {
+  if(reduce || lb.classList.contains('on')) return;
+  const p = document.createElement('div');
+  p.className = 'pop';
+  p.innerHTML = svg(STICKERS[Math.random()*STICKERS.length|0], 26);
+  p.style.left = e.clientX + 'px'; p.style.top = e.clientY + 'px';
+  document.body.appendChild(p);
+  p.animate([{transform:'translate(-50%,-50%) scale(.4)',opacity:1},
+             {transform:'translate(-50%,-180%) scale(1.2)',opacity:0}],
+            {duration:900,easing:'ease-out'}).onfinish = () => p.remove();
+});
+
+</script>
+</body>
+</html>
